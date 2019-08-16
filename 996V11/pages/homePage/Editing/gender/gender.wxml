@@ -1,0 +1,10 @@
+ <import src="../../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" >
+    <radio value="男" />男
+  </label>
+   <label class="radio" >
+    <radio value="女"/>女
+  </label>
+</radio-group>

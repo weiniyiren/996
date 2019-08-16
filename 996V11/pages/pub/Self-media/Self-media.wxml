@@ -1,0 +1,40 @@
+<template name="Self-media" data="{{indexData}}">
+
+<view class='nav' bindtap='nav' data-name='自媒体库'>
+  <view class='nav_left'>
+    <image src='../../image/my_19.png'></image>
+    <text>自媒体库</text>
+  </view>
+  <view class='nav_right'>
+  <image src='../../image/jiantou.png'></image>
+  <text>{{indexData.mediaTotal}}</text>
+  </view>
+</view>
+<view class='commodity'>
+  <image 
+  wx:for="{{indexData.mediaInfo}}" 
+        data-errimg="classicArr[{{index}}].img"  
+        binderror="binderrorimg"  
+        src='{{item.mediaCoverAddress}}'></image>
+  <!-- <view wx:for="{{commodity}}"  class='image'></view> -->
+  
+</view>
+</template>
+<template name="collector" data="{{indexData}}">
+
+<view class='nav' bindtap='nav' data-name='收藏夹'>
+  <view class='nav_left'>
+    <image src='../../image/my_19.png'></image>
+    <text>收藏夹</text>
+  </view>
+  <view class='nav_right'>
+  <image src='../../image/jiantou.png'></image>
+  <text>{{indexData.mediaTotal}}</text>
+  </view>
+</view>
+<view class='commodity'>
+  <image wx:for="{{indexData.mediaInfo}}" src='{{item.mediaCoverAddress}}'></image>
+  <!-- <view wx:for="{{commodity}}"  class='image'></view> -->
+  
+</view>
+</template>

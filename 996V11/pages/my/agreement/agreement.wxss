@@ -1,0 +1,6 @@
+/* pages/my/agreement/agreement.wxss */
+@import "../../pub/header/header.wxss";
+view{
+  padding:30rpx  20rpx 40rpx;
+  font-size: 30rpx;
+}

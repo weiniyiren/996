@@ -1,0 +1,85 @@
+<!--pages/homePage/mySelfMedia/mySelfMedia.wxml-->
+<view class='page'>
+ <import src="../../pub/header/header.wxml" />
+<view class='header'>
+    <image bindtap='navigateBack' src='/image/com_back1.png'></image>
+    <view  class="header_tab">
+    <scroll-view class="scroll" scroll-x >
+        <view bindtap='nav'  class='{{nav_index==index? active:""}}' data-index='{{index}}' wx:for="{{header}}">
+        <text>{{item}}</text>
+        </view>
+        <view ></view>
+        <view></view>
+    </scroll-view>
+    </view>
+  </view>
+  <view class='header_box'></view>
+
+<view class='bg_img'>
+  <swiper vertical="true" bindchange="swiper" circular="{{circular}}">
+      <swiper-item wx:for="{{filePath_arr}}">
+  <!-- <image src="../../../image/media_bg.png"></image> -->
+          <video 
+          autoplay="true"
+        show-play-btn="false"
+          danmu-btn="true"  
+          direction="0" 
+          vslide-gesture="true"
+          src="{{item}}" ></video>
+      
+  <view class='function'>
+    <view class='give' bindtap='download' style='margin-bottom:22rpx;'>
+          <image src='../../../image/fenxian.png'></image>
+        </view>
+        <view class='give'>
+          <image bindtap='give_fun' hidden='{{give}}'  src='../../../image/give-1.png'></image>
+          <image  bindtap='give_fun' hidden='{{!give}}' src='../../../image/give.png'></image>
+          <text>{{item.clickNumber}}111</text>
+        </view>
+        <!-- <view class='give'>
+          <image src='../../../image/home16.png'></image>
+          <text>23421</text>
+        </view> -->
+         <view class='give'  bindtap='share_mask'>
+          <image src='../../../image/home17.png'></image>
+          <text>23421</text>
+        </view>
+  </view>
+  <!-- <view class='Barrage_inp'>
+    <input ></input>
+  </view> -->
+  
+  </swiper-item>
+  </swiper>
+</view>
+</view>
+<!-- <view class='share_mask' ></view> -->
+<view class='share'  hidden='{{share_mask}}' >
+  <view class='share_title'>921人气
+    <image bindtap='share_mask'src='../../../image/close.png'></image>
+  </view>
+  <view wx:for="1111" wx:key="{{index}}" class='share_txt'>
+    <image class='fl' src='../../../image/default.png'></image>
+    <view class='share_txt_fl fl'>基泥态</view>
+    <view class='share_txt_fr fr'>2019-07-26  16:32</view>
+  </view>
+
+</view>
+<view class='download'  hidden='{{download}}'>
+  <view class='download_cen'>
+    <image src='../../../image/download3.png'></image>
+    <text>分享</text>
+  </view>
+   <view class='download_cen'>
+    <image src='../../../image/download1.png'></image>
+    <text>下载</text>
+  </view>
+   <view class='download_cen'>
+    <image src='../../../image/download2.png'></image>
+    <text>投诉</text>
+  </view>
+   <view class='download_cen'>
+    <image src='../../../image/download5.png'></image>
+    <text>收藏</text>
+  </view>
+</view>

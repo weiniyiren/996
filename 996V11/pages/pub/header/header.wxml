@@ -1,0 +1,7 @@
+<template name="header" data="{{header}}">
+  <view class='header'>
+    <image bindtap='navigateBack'  src='/image/com_back.png'></image>
+    <text>{{header}}</text>
+  </view>
+  <view class='header_box'></view>
+</template>

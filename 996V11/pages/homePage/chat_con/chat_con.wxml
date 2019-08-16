@@ -1,0 +1,53 @@
+<!--pages/homePage/chat_con/chat_con.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='minpian_box'>
+<view class='minpian'>
+  <view class='minpian_left'>
+  <view>
+      <view class='name'>{{header}}</view>
+      <view class='postiton'>{{postiton}}</view>
+      </view>
+      <view class='company'>{{company}}</view>
+  </view>
+  <view class='minpian_right'>
+    <text>{{pho}}</text>
+    <image src='{{img}}'> </image>
+  </view>
+</view>
+<view class='minpian_goods'>
+  <view class='minpian_goods_one'>
+    <image mode='widthFix' wx:for="{{goods_img}}"  src='item'></image>
+  </view>
+  <view class='minpian_goods_two'>
+    {{fenko}}
+  </view>
+</view>
+</view>
+<view class='time'>{{time}}</view>
+<!-- 对话 -->
+ <!-- // own===true自己发出， -->
+<view class='dialogue {{own===true?"my_dialogue":""}}'>
+  <view class='portrait'>
+  <image src='../../../image/home14.png'></image>
+  </view>
+  <view class='dialogue_box'>
+  <image  wx:if="{{own===false}}"  src='../../../image/dialogue.png'></image>
+  <image  wx:else  src='../../../image/my_dialogue.png'></image>
+  <view class='dialogue_con'>
+    {{huo}}
+  </view>
+  </view>
+</view>
+<view class='dialogue_inpt_show'></view>
+<view class='dialogue_inpt_box'>
+  <view class='dialogue_mode' bindtap='dialogue_mode'>
+    <image src='../../../image/tab.png'></image>
+  </view>
+  <input hidden='{{chat_inp}}'></input>
+  <view class='not_inpt'  bindtouchstart='startHandel' bindtouchend='endHandle' hidden='{{!chat_inp}}' >按住说话</view>
+  <view class='mode_pic' >
+      <image src='../../../image/mode.png'></image>
+  </view>
+  
+</view>

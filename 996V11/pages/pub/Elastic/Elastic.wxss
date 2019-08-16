@@ -1,0 +1,39 @@
+.scan{
+ 
+  z-index: 6;
+  width: 100vw;
+  height: 100vh;
+ 
+ 
+}
+.scan_back{
+ background: #333;
+  opacity: 0.5;
+  position: fixed;
+    width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.scan_item_box{
+   position: absolute;
+    top: 11vh;
+  right: 34rpx;
+  width: 200rpx;
+  text-align: center;
+  background: #fff;
+  height: auto;
+  overflow: hidden;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 77rpx;
+ z-index: 12;
+ border-radius: 15rpx;
+}
+.scan_item text{
+ border-bottom:1rpx solid #999; 
+ display: inline-block;
+ width: 150rpx;
+ margin: 0 auto;
+}

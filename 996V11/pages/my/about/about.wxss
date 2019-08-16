@@ -1,0 +1,63 @@
+/* pages/my/about/about.wxss */
+@import "../../pub/header/header.wxss";
+
+.about image{
+  width:200rpx;
+  height: 200rpx;
+  margin: 102rpx auto 33rpx;
+  display: block;
+  border-radius: 30rpx;
+}
+.about{
+  overflow: hidden;
+  text-align: center;
+  background: #f2f2f2;
+  height: 637rpx;
+}
+.about_one{
+  font-size:36rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.header{
+  background: #f2f2f2;
+  box-shadow:0vh;
+}
+.about_two{
+  font-size:30rpx;
+font-family:PingFang-SC-Medium;
+font-weight:bold;
+color:rgba(173,173,173,1);
+}
+.fun{
+  padding-top: 22rpx;
+
+}
+.nav{
+  width:685rpx;
+  margin: 0 auto;
+  height: 90rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.nav text{
+  float: left;
+}
+.nav image{
+width:14rpx;
+height:25rpx;
+float: right;
+margin:  29rpx auto;
+}
+.agreement{
+  height: 65vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+}
+.agreement{
+  
+}

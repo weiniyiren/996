@@ -1,0 +1,144 @@
+<!--pages/homePage/homePgae.wxml-->
+<!-- <view class='home' style='height:{{height}}px'>
+ -->
+ <import src="../../pub/Elastic/Elastic.wxml" />
+  <image class='back' bindtap='navigateBack' src='../../../image/com_back1.png'></image>
+ <view class='home' bindtouchstart='touchStart' bindtouchend="touchEnd">
+ <!-- bindtouchstart='touchStart' bindtouchend="touchEnd" -->
+  <!-- <view class='home' catchtouchstart='touchStart' catchtouchend='touchEnd'  > -->
+   <image src='{{bgSrc}}' class='bgImg' mode="aspectFill"></image>
+   <!-- 消息留言 -->
+   <!-- <view bindtap='message' class='age'>
+      <image  src='../../../image/home2.png'></image>
+      <text>99+</text>
+   </view> -->
+   <view class='homeMian'>
+      <!-- 上半部 -->
+      <view>
+      <view class='choose_back'  bindtap="choose_fun"  hidden="{{choose_back}}"></view>
+       <view class='choose' type='primary'  hidden="{{choose_back}}" bindtap='choose'>选择照片</view>
+        <image  bindtap="choose_fun"    src='{{userImg}}' mode='aspectFill'></image>
+        <view   class='bgTop'>
+           <!-- <image src='../../../image/home1.png' mode='aspectFit' ></image> -->
+           <template is="back_code" data="{{home_code}}"  />
+           <image  src='../../../image/home6.png' bindtap='scan_back' mode='aspectFit' ></image>
+        </view>
+      </view>
+    
+      <!-- 下半部 -->
+      <view class='cen_top'>
+        <!-- 人物头像 -->
+      <view id='headPhone' bindtap='headPhone'>
+         <image src=''></image>
+      </view>
+         <button class='share'  hover-class="none" open-type="share" >
+               <image src='../../../image/home3.png' ></image> <view>分享</view> 
+            </button>
+         <!-- <image src='../../../image/home7.png' class='bg'></image> -->
+         <view>
+           <view class='contet'>
+              <view class='name'>
+                 <text> {{name}}</text>
+                 <text>{{position}}</text>
+              </view>
+         
+              <view class='company'>
+                 <view>{{Corporate_name}}</view>
+                 <view>{{Company_address}}</view>
+              </view>
+              <view class='message'>
+               <view> <image src='../../image/home19.png' mode='widthFix'></image>{{masonry}}</view>
+                <view> <image src='../../image/home4.png' mode='widthFix'></image>{{zan}}</view>
+                <view> <image src='../../image/home20.png' mode='widthFix'></image>{{firendCount}}</view>
+              </view>
+           </view>
+
+           <!-- <view class='money'>
+             <image src='../../../image/home10.png' mode='widthFix'></image>
+             <view>1000+</view>
+           </view> -->
+           
+         </view>
+        <!-- 详细联系一块 -->
+         <view class='relation'>
+          <view class='detailed' hidden='{{detailed_box}}'>
+              <view class='detailed_cen'>
+                <view class='detailed_cen_one' wx:key="{{index}}" wx:for="{{detailed}}">
+                    <view class='detailed_cen_img'>
+                        <image src='{{item.img}}'></image>
+                    </view>
+                    <view class='detailed_cen_title'>
+                    <text>{{item.title}}</text>
+                      <text class='txt'>{{item.txt}}</text>
+                    </view>
+                    
+                    <view class='detailed_cen_fun' bindtap='copyBtn' data-data="{{item.fun}}" data-txt='{{item.txt}}' >{{item.fun}}</view>
+                </view>
+                
+              </view>
+              <view class='sanjiao'></view>
+           </view>
+           <view class='arrowUp {{detailed_box?"":"arrowDown"}}' bindtap='detailed'>
+              <text >详细联系</text>
+              <image bindtap='detailed' src='../../../image/home15.png' ></image> 
+           </view>
+      
+           <view class='code'>
+              <image src='../../../image/shopping.png'></image>
+              <text>他的商城</text>
+           </view>
+         </view>
+      </view>
+   </view>
+   <!--  -->
+   <!-- <view class='sliding'>向上滑可以派发名片哦</view> -->
+   <view class='sliding'></view>
+   <!-- 最底部 -->
+      <!-- <view class='foot_box'></view> -->
+   <!-- <view class='foot'>
+     <view wx:for='{{footArr}}'>
+       <view class='footCircle' bindtap='footCircle' data-index='{{index}}' >
+         <image src='{{item.imgsrc}}'></image>
+          <view wx:if='{{item.mes==""?false:true}}'>{{item.mes}}</view> 
+       </view>
+        {{item.text}}
+     </view>
+   </view> -->
+     
+<view class='Scope'>
+  <image src='../../../image/shop1.png'></image>
+  <view class='text'>行政、人事、客服、财会、餐饮、司
+机、零售、旅游、美容、</view>
+    <view class='ScopeMode'>
+        <text class='ft'>查看更多</text>
+        <image class='ft' src='../../../image/home15.png'></image>
+    </view>
+</view>
+<view class='Scope'>
+    <view class='title fl'>添加标签</view>
+    <view class='title_bolk'>
+    <view class='txt fl'>备注1</view>
+ <view class='txt fl'>备注2</view>
+  <view class='txt fl'>备注3</view>
+   <!-- <view class='txt fl'>备注1</view> -->
+   </view>
+    <view class='ScopeMode'>
+        <text class='ft'>查看更多</text>
+        <image class='ft' src='../../../image/home15.png'></image>
+    </view>
+</view>
+<view class='Remarks'>
+<view class='Remarks_title fl'>添加备注：</view>
+<textarea class='Remarks_txt fl' placeholder='填写您的备注信息'></textarea>
+ <view class='ScopeMode'>
+        <text class='ft'>查看更多</text>
+        <image class='ft' src='../../../image/home15.png'></image>
+    </view>
+</view>
+<view class='him' bindtap='him'>
+  找TA聊天
+</view>
+
+</view>
+
+

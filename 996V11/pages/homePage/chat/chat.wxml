@@ -1,0 +1,70 @@
+<!--pages/homePage/chat/chat.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='search'>
+  <view class='search_box'>
+     <view hidden='{{search_btn}}' >
+      <image src='../../../image/search.png'></image>
+      <text >输入职位</text>
+    </view>
+    <input bindinput='search' value='{{search_content}}'></input>
+  </view>
+</view>
+<view class='commodity' wx:for="{{commodity}}" wx:key="{{index}}" >
+<!-- {{item.companyName}} -->
+<!-- //如：js里 数组:[{aa:bb}] wxml里{{item.aa}}得到就是bb ，{{item}}//项   -->
+<!--qq等复制榜  -->
+<view class='qq_box_show' catchtap='icon'  data-i='{{index}}'  hidden='{{ !(item.icon && agree)}}'></view>
+<view class='qq_box' wx:if='{{item.icon && agree}}'  bindtap='icon'  data-i='{{index}}'>
+  <view class='qqBox_item' catchtap='tel' data-txt='{{item.tel}}'>
+    <image src='../../../image/xin8.png'></image>
+    <text>打电话</text>
+  </view>
+  <view class='qqBox_item'  data-txt='{{item.qq}}'  catchtap='qq' >
+    <image src='../../../image/xin9.png'></image>
+    <text>复制QQ</text>
+  </view>
+  <view class='qqBox_item'  data-txt='{{item.weixin}}'  catchtap='qq'>
+    <image src='../../../image/xin10.png'></image>
+    <text>复制微信</text>
+  </view>
+  <view class='qqBox_item'  data-txt='{{item.youxinag}}'  catchtap='qq'>
+    <image src='../../../image/xin11.png'></image>
+    <text>复制邮箱</text>
+  </view>
+  <view class='qqBox_item' >
+    <image src='../../../image/xin12.png'></image>
+    <text>查看介绍</text>
+  </view>
+  <view class='qqBox_item'>
+    <image src='../../../image/xin13.png'></image>
+    <text>导航</text>
+  </view>
+</view>
+<!--  -->
+  <view class='touxian' bindtap='card'  data-index=''>
+    <image binderror="errorimgs" data-name='userCoverLink' data-index='{{index}}' src='{{item.userCoverLink}}' ></image>
+  </view>
+  <view class='commodity_con' bindtap="chat_con"  data-i='{{index}}'>
+    <view class='commodity_con_one'>
+      <view class='name'>{{item.userName}}</view>
+      <view class='position' >{{item.userPosition}}</view>
+     </view>
+     <view class='commodity_con_two'>
+     <text> 经营范围：</text>
+      <text>{{item.management}}</text>
+     </view>
+     <view class='icon'  catchtap='icon' data-i='{{index}}' hidden='{{!agree}}' >
+      <image mode="widthFix" src="../../../image/xin8.png"></image>
+      <image mode="widthFix" src="../../../image/xin9.png"></image>
+      <image mode="widthFix" src="../../../image/xin10.png"></image>
+      <image mode="widthFix" src="../../../image/xin11.png"></image>
+      <image mode="widthFix" src="../../../image/xin12.png"></image>
+      <image mode="widthFix" src="../../../image/xin13.png"></image>
+     </view>
+  </view>
+   <!-- 同意拒接 -->
+     <view class='agree {{item.state=="1"?"":"agree_tab"}}'  hidden='{{agree}}'  bindtap='agree' data-state='{{item.state}}' data-index='{{item.userId}}'>
+        <text >{{item.state=="1"?"同意":"已添加"}}</text>
+     </view>
+</view>

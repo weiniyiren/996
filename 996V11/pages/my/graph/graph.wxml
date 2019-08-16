@@ -1,0 +1,114 @@
+<!--pages/my/my.wxml-->
+<view class='header_back'>
+  <image class='header_back_image' src='{{indexData.backgroundImagesLink}}'></image>
+  <image class='return_btn' bindtap='return_btn' src='/image/com_back1.png'></image>
+</view>
+
+<view class='introduction'>
+<view class='uersname'>{{indexData.userName}}</view>
+<view class='introduction_mode'>
+  <view class='introduction_mode_icon'>
+    <image bindtap='mode_show' src='../../../image/upload.png'></image>
+  </view>
+  <view class='introduction_mode_icon'>
+    <image bindtap='mode_show' src='../../../image/shouchang.png'></image>
+  </view>
+  <!-- <view class='introduction_mode_show'  bindtap='mode_show'  hidden='{{mode_show}}'></view> -->
+
+</view>
+  <text>名片号:{{indexData.userVisitingCard}} </text>
+  <view class='portrait'>
+  <image src='{{indexData.userCoverLink}}'></image>
+  </view>
+  <view class='introduction_botm'>
+      <view class='introduction_botm_left'>
+        <image src='{{indexData.userCoverLink}}'> </image>
+      </view>
+      <view class='introduction_botm_cen'>
+      <view class='introduction_botm_cen_one'>
+        <view class='name'>{{indexData.userName}}</view>
+          <view class='title' hidden='{{!indexData.industry}}'>{{indexData.industry}}</view>
+      </view>
+        <view class='introduction_botm_cen_two'>
+         <view class='Telephone_box'>
+           <image src='../../../image/xin8_cop.png' ></image>
+          </view>
+          <view class='Telephone'>
+            {{indexData.userPhone}}
+          </view>
+        </view>
+        <view class='introduction_botm_cen_ther'>
+        {{indexData.companyName}}
+        </view>
+      </view>
+
+      <view class='introduction_botm_right'>
+        <image src='{{indexData.qrCodeImagesLink}}'></image>
+      </view>
+  </view>
+</view>
+<view class=' Connectionsbox'>
+<view class='Connections'>
+  <view class='Connections_one'>
+  <text class='num'>{{indexData.mediaTotal}}</text>
+  <text>发布媒体数</text>
+  </view>
+ 
+  <view class='Connections_Three'>
+ <text class='num'>{{indexData.clickTotalNumber}}</text>
+  <text>获赞总数</text>
+  </view>
+  <!-- <view class='Connections_Four'>
+ <text class='num'>1092</text>
+  <text>人脉值</text>
+  </view> -->
+</view>
+<view class='autograph' >{{indexData.personalSign}}</view>
+</view>
+<!-- Self-media -->
+<!-- <view class='nav_box'>
+ <scroll-view class="scroll" scroll-x >
+        <view bindtap='nav' 
+         wx:for="{{arr}}"
+              class='{{nav_index==index? "active":""}}' 
+              data-index='{{index}}' >
+        <text>{{item}}</text>
+        </view>
+    </scroll-view>
+    <view class='link'></view>
+</view> -->
+<!-- 媒体 -->
+<view class='contentbox' wx:for="{{indexData.mediaInfo}}" wx:key="">
+  <view class='content'>
+    <view class='content_title'>{{item.title}}</view>
+    <view class='video'>
+    <image src='{{item.mediaCoverAddress}}'></image>
+    <view class='video_fun'>
+        <!-- <view class='video_funSon'>
+            <image src='../../../image/home20.png' ></image>
+            <text></text>
+        </view> -->
+        <view class='video_funSon'>
+              <image src='../../../image/give-1.png'></image>
+            <!-- <image src='../../../image/give.png' ></image> -->
+            <text>{{item.mediaClickNumber}}</text>
+        </view>
+        <!-- <view class='video_funSon'>
+            <image src='../../../image/home16.png' ></image>
+            <text>9994</text>
+        </view> -->
+    </view>
+</view>
+ <view class='video_bot'>
+        <view class='video_botFt'>
+          <text>置顶</text>
+          <switch color="#F0A93A"></switch>
+        </view>
+        <view class='video_botFt'>
+          <text>发布到朋友圈</text>
+          <switch color="#F0A93A"></switch>
+        </view>
+        <view class='video_botRt' >{{item.addTime}}</view>
+    </view>
+  </view>
+</view>

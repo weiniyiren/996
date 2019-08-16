@@ -1,0 +1,79 @@
+<!--pages/my/my.wxml-->
+<view class='header_back'>
+  <image class='header_back_image' src='{{backgroundImagesLink}}'></image>
+  <image class='return_btn' bindtap='return_btn' src='/image/com_back1.png'></image>
+</view>
+
+<view class='introduction_mode'>
+  <view bindtap='mode_show' class='introduction_mode_icon'>
+    <image  src='../../image/introduction_mode.png'></image>
+  </view>
+  <view class='introduction_mode_show'  bindtap='mode_show'  hidden='{{mode_show}}'></view>
+  <view class='introduction_mode_cen'   hidden='{{mode_show}}'>
+    <view class='sanjiao'></view>
+    <view class='introduction_mode_cenbox'>
+      <view  class='introduction_mode_item' bindtap='business'>名片编辑</view>
+      <view class='introduction_mode_item'  bindtap='jurisdiction'>名片权限</view>
+      <view class='introduction_mode_item' >购买记录</view>
+      <view class='introduction_mode_item'>收货地址</view>
+      <view class='introduction_mode_item' bindtap='about'>关于</view>
+      <view class='introduction_mode_item border_none'>退出</view>
+    </view>
+  </view>
+</view>
+<view class='introduction'>
+<view class='uersname'>{{indexData.userName}}</view>
+  <text>名片号:{{indexData.userVisitingCard}} </text>
+  <view class='portrait'>
+  <image src='{{indexData.userCoverLink}}'></image>
+  </view>
+  <view class='introduction_botm'>
+      <view class='introduction_botm_left'>
+        <image src='../../image/996icon.png'> </image>
+      </view>
+      <view class='introduction_botm_cen'>
+      <view class='introduction_botm_cen_one'>
+        <view class='name'>{{indexData.userName}}</view>
+          <view class='title' hidden='{{!indexData.industry}}'>{{indexData.industry}}</view>
+      </view>
+        <view class='introduction_botm_cen_two'>
+         <view class='Telephone_box'>
+           <image src='../../image/xin8_cop.png' ></image>
+          </view>
+          <view class='Telephone'>
+            {{indexData.userPhone}}
+          </view>
+        </view>
+        <view class='introduction_botm_cen_ther'>
+        {{indexData.companyName}}
+        </view>
+      </view>
+
+      <view class='introduction_botm_right'>
+        <image src='{{imgPath}}'></image>
+      </view>
+  </view>
+</view>
+<view class=' Connectionsbox'>
+<view class='Connections'>
+  <view class='Connections_one'>
+  <text class='num'>{{indexData.mediaTotal}}</text>
+  <text>发布媒体数</text>
+  </view>
+ 
+  <view class='Connections_Three'>
+ <text class='num'>{{indexData.clickTotalNumber}}</text>
+  <text>获赞总数</text>
+  </view>
+  <!-- <view class='Connections_Four'>
+ <text class='num'>1092</text>
+  <text>人脉值</text>
+  </view> -->
+</view>
+<!-- <view class='autograph' >游戏人生？把握每一天才是真理！</view> -->
+</view>
+<!-- Self-media -->
+
+ <import src="../pub/Self-media/Self-media.wxml" />
+<template is="Self-media" data="{{indexData}}"  />
+<template is="collector" data="{{indexData}}"  />

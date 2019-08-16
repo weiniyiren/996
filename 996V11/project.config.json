@@ -1,0 +1,224 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"coverView": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.1",
+	"appid": "wxec9dfd1ce3e03a1c",
+	"projectname": "996%E5%90%8D%E7%89%87v",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 23,
+			"list": [
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/logs/logs",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/homePage/homePgae",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "个人中心",
+					"pathName": "pages/my/my",
+					"query": "page=homepage",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "最近",
+					"pathName": "pages/homePage/chat/chat",
+					"query": "page=留言",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "聊天",
+					"pathName": "pages/homePage/chat_con/chat_con",
+					"query": "name=赵得住",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "名片编辑",
+					"pathName": "pages/homePage/Editing/Editing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "My Self-Media",
+					"pathName": "pages/homePage/mySelfMedia/mySelfMedia",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "名片编辑——修改",
+					"pathName": "pages/homePage/Editing/edit_inp/edit_inp",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "行业",
+					"pathName": "pages/homePage/Editing/industry/industry",
+					"query": "index=16",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homePage/Editing/position/position",
+					"pathName": "pages/homePage/Editing/position/position",
+					"query": "职位",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "职业",
+					"pathName": "pages/homePage/Editing/position/position",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布自媒体",
+					"pathName": "pages/my/release/release",
+					"query": "page=留言",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "权限",
+					"pathName": "pages/my/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上传视频",
+					"pathName": "pages/my/release/release",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "名片编辑",
+					"pathName": "pages/my/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的自媒体库",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "点赞",
+					"pathName": "pages/homePage/mySelfMedia/mySelfMedia",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心-自媒体",
+					"pathName": "pages/my/graph/graph",
+					"query": "page=homepage",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心-关于",
+					"pathName": "pages/my/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Self-Media",
+					"pathName": "pages/homePage/selfMedia/selfMedia",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 20,
+					"name": "名片",
+					"pathName": "pages/homePage/card/card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的自媒体",
+					"pathName": "pages/my/graph/graph",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聊天",
+					"pathName": "pages/homePage/chat_con/chat_con",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "点击自媒体进入的页面",
+					"pathName": "pages/my/graph/graph",
+					"scene": null
+				}
+			]
+		}
+	}
+}

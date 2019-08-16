@@ -1,0 +1,7 @@
+<!--pages/my/fun/fun.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view >Hello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello World</view>
+<view class='Detailed '>
+  <image src='../../../image/bg-d.png'></image>
+</view>

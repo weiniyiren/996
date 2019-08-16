@@ -1,0 +1,19 @@
+<!--pages/my/sign/sign.wxml-->
+<view class='navigator' bindtap='navigator'>
+  <image src='../../image/com_back.png'></image>
+</view>
+<view class='title'>手机验证</view>
+<view class='diqu_title'>+86</view>
+<view class='diqu'>
+<input placeholder='请输入手机号码' bindinput="zhahao" value='{{zhahao}}'></input>
+</view>
+<view class='diqu_title' disabled='{{disabled}}'>验证码</view>
+<view class=' denglu'>
+<input placeholder='请输入验证码' bindinput='yan' value='{{yan}}'></input>
+<view class='btn' bindtap='codebtn'> {{code}}</view>
+</view>
+<button bindtap='login'>登陆</button>
+<view class='bidu'>
+  <text class='one'>点击登录表示阅读并同意</text>
+  <text class='two'>《小熊名片协议与隐私政策》</text>
+</view>

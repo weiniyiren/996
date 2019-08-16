@@ -1,0 +1,22 @@
+<!--pages/homePage/Editing/Editing.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='touxian'>
+  <view class='touxian_left'>
+      头像
+  </view>
+  <view class='touxian_right' >
+    <image bindtap='touxian' mode='aspectFill' src='{{touxian}}'></image>
+  </view>
+</view>
+
+<!-- <navigator url=""> -->
+  <view class='nav' bindtap='nav' data-index='{{index}}' wx:for="{{nav}}" data-keydata='{{item.text}}' data-typename='{{item.type_name}}'>
+    <view class='nav_left'> {{item.name}}</view>
+    <view class='nav_right'>
+    <image src='../../../image/jiantou.png'></image>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  
+<!-- </navigator> -->

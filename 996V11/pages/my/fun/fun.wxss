@@ -1,0 +1,14 @@
+/* pages/my/fun/fun.wxss */
+@import "../../pub/header/header.wxss";
+page{
+  padding: 0 20rpx 50rpx;
+  width: 710rpx;
+  overflow: hidden;
+}
+view{
+  padding-top: 30rpx;
+}
+.Detailed{
+  width: 100%;
+  height: 300rpx;
+}

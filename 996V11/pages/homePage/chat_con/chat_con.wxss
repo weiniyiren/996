@@ -1,0 +1,228 @@
+/* pages/homePage/chat_con/chat_con.wxss */
+@import "../../pub/header/header.wxss";
+.minpian{
+  width:660rpx;
+height:120rpx;
+background:rgba(44,66,77,1);
+margin: 0 auto;
+
+color: #fff;
+}
+.minpian_left {
+  float: left;
+}
+.minpian_left .name{
+  font-size:36rpx;
+font-family:PingFang-SC-Bold;
+font-weight:bold;
+color:rgba(255,255,255,1);
+float: left;
+margin: 24rpx auto auto 21rpx; 
+}
+.minpian_left .postiton{
+  width:92rpx;
+height:30rpx;
+background:rgba(44,66,77,1);
+border:1rpx solid rgba(255,255,255,1);
+opacity:0.8;
+font-size:18rpx;
+font-family:PingFang-SC-Regular;
+font-weight:400;
+color:rgba(255,255,255,1);
+text-align: center;
+line-height: 30rpx;
+float: left;
+border-radius: 15rpx;
+margin: 29rpx auto auto 12rpx;
+}
+.company{
+  font-size:18rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+float: left;
+margin: 20rpx auto auto 18rpx;
+}
+.minpian_right{
+  float: right;
+  overflow: hidden;
+  font-size:30rpx;
+font-family:PingFang-SC-Regular;
+font-weight:400;
+color:rgba(255,255,255,1);
+}
+
+.minpian_right text{
+  float: right;
+  margin-right: 19rpx;
+  line-height: 120rpx;
+}
+.minpian_right image{
+  float: right;
+  width: 20rpx;
+  height: 21rpx;
+  margin: 50rpx 11rpx auto auto;
+
+}
+.minpian_goods{
+  width:640rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 10rpx 10rpx 20rpx;
+   /* background: skyblue; */
+   margin: 0 auto;
+}
+.minpian_goods_one {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+.minpian_goods_one image{
+  display: block;
+  width: 120rpx;
+  height: auto;
+  /* background: white; */
+}
+.minpian_goods_two{
+  width:622rpx;
+height:60rpx;
+font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-top:22rpx; 
+}
+.minpian_box{
+  box-shadow:0 0 16rpx #2C424D  ;
+  width: 660rpx;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.dialogue{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  /* background: skyblue; */
+   /* margin-bottom:39rpx;  */
+}
+.portrait{
+  float: left;
+  width: 91rpx;
+  height: 91rpx;
+  margin-left: 32rpx;
+  position: relative;
+}
+.time{
+  margin-top: 22rpx;
+font-size:26rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(170,170,170,1);
+text-align: center;
+margin-bottom: 39rpx;
+}
+.dialogue_box{
+  max-width:492rpx;
+height:auto;
+overflow: hidden;
+float: left;
+margin: 15rpx auto auto 14rpx;
+position: relative;
+}
+.dialogue_box image{
+  z-index: 1;
+  width: 66rpx;
+  height: 50rpx;
+}
+.dialogue_con{
+  background: #F1A93B;
+  /* background: pink; */
+  font-size:28rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+padding: 20rpx 29rpx;
+border-radius:20rpx;
+float: left;
+max-width: 414rpx;
+word-wrap: break-word;
+    word-break: normal;
+    position: relative;
+    z-index: 9;
+    top: -57rpx;
+    margin-left: 14rpx;
+}
+
+/* .dialogue .dialogue_con_icon{
+  width: 66rpx;
+  height: 50rpx;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: -14rpx;
+} */
+.my_dialogue .portrait,.my_dialogue .dialogue_box ,.my_dialogue .dialogue_box image{
+  float: right;
+}
+.my_dialogue .dialogue_con{
+  background:rgba(230,230,230,1);
+  margin-left:9rpx; 
+  border-radius: 20rpx;
+}
+.my_dialogue .dialogue_box{
+  margin-right: 15rpx;
+}
+.my_dialogue .portrait{
+  margin-right: 32rpx;
+  margin-left: auto;
+}
+.dialogue_inpt_box{
+  width: 100vw;
+  height: 100rpx;
+  background: #CCCCCC;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+overflow: hidden;  
+}
+page{
+  padding-bottom:100rpx; 
+  
+}
+.dialogue_mode,.mode_pic{
+  float: left;
+  margin: 20rpx auto 20rpx 24rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.dialogue_mode image,.mode_pic image{
+  width: 100%;
+}
+.dialogue_inpt_box input ,.not_inpt{
+  width:460rpx;
+height:60rpx;
+background:rgba(255,255,255,1);
+border:1rpx solid rgba(179,179,179,1);
+border-radius:10rpx;
+float: left;
+margin: 20rpx;
+padding: 0;
+font-size: 40rpx;
+line-height: 60rpx;
+}
+.mode_pic {
+  float: left;
+}
+.not_inpt{
+  background: #666666;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.speak{
+  width: 
+}

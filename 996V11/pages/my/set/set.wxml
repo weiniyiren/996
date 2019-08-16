@@ -1,0 +1,25 @@
+<!--pages/my/set/set.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='nav' wx:for="{{nav}}" wx:key="{{idx}}"  wx:for-item="items"  wx:for-index="idx" >
+  <!-- 一级菜单 -->
+  <view class=" weui-cell_switch" >
+    <view class="weui-cell__fl">
+      <text>{{items.title}}</text>
+    </view>
+    <view class="weui-cell__ft">
+      <switch color='#F0A93A' data-index='{{idx}}'  bindchange="other" checked="{{items.choose}}" />
+    </view>
+  </view>
+  <!-- 二级菜单 -->
+  <view class='nav_item' hidden='{{!items.choose}}' wx:for="{{items.second}}" wx:for-index="second_idx"  wx:for-item="second_item" >
+    <view class=" weui-cell_switch">
+    <view class="weui-cell__fl">
+      <text>{{second_item.title}}</text>
+    </view>
+    <view class="weui-cell__ft">
+      <switch color='#F0A93A' data-findex='{{idx}}' data-sindex='{{second_idx}}'  bindchange="mode" checked="{{second_item.choose}}"/>
+    </view>
+  </view>
+  </view>
+</view>

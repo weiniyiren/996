@@ -1,0 +1,8 @@
+<!--pages/homePage/search/search.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='search'>
+<image hidden='{{search_box}}' src='../../../image/search.png'></image>
+<text hidden='{{search_box}}' >搜索手机号或名片号</text>
+    <input bindinput='search'  confirm-type="search" bindconfirm="searching" ></input>
+</view>

@@ -1,0 +1,47 @@
+/* pages/homePage/Editing/edit_inp/edit_inp.wxss */
+@import "../../../pub/header/header.wxss";
+.nav{
+  width:100vw;
+height:auto;
+background:rgba(255,255,255,1);
+margin: 20rpx auto;
+overflow: hidden;
+padding-bottom: 15rpx;
+}
+page{
+  background: #f2f2f2;
+}
+input{
+  width: 500rpx;
+  height: 90rpx;
+  font-size: 34rpx;
+  padding: 4prx 20rpx;
+  background: #f2f2f2;
+  float: left;
+  margin-left:30rpx;
+  margin-top: 15rpx; 
+  border-radius:20rpx; 
+
+}
+.nav view {
+  background: skyblue;
+  float: right;
+  width: 100rpx;
+  height: 70rpx;
+    margin-right:37rpx;
+  margin-top: 30rpx; 
+  border-radius:20rpx; 
+  font-size: 30rpx;
+  line-height:70rpx;
+  text-align: center;
+  color: #f2f2f2;
+}
+textarea{
+  width: 680rpx;
+  height: 200rpx;
+   background: #f2f2f2;
+   border-radius: 10rpx;
+   padding: 20rpx;
+  float: left;
+  margin: 15rpx auto auto 15rpx;
+}

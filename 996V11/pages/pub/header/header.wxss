@@ -1,0 +1,42 @@
+/* pages/homePage/chat/chat.wxss */
+.header{
+  width: 100vw;
+  height: 10vh;
+  min-height: 143rpx;
+  text-align: center;
+   position:fixed ;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow:0px 1px 0px 0px rgba(230,230,230,1);
+  z-index: 11;
+}
+.header_box{
+    width: 100vw;
+  height: 10vh;
+  min-height: 143rpx;
+   background: #fff;
+   box-shadow:0px 1px 0px 0px rgba(230,230,230,1);
+}
+.header text{
+  position: absolute;
+  bottom: 29rpx;
+  font-size:36rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(0,0,0,1);
+left: 0;
+/* margin-left: -34.5rpx; */
+display: block;
+width: 100vw;
+text-align: center;
+z-index: 7;
+}
+.header image{
+width:18rpx;
+height:34rpx;
+  position: absolute;
+  left: 24rpx;
+  bottom: 29rpx;
+z-index: 9;
+}

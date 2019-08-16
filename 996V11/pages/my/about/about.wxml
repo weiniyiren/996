@@ -1,0 +1,18 @@
+<!--pages/my/about/about.wxml-->
+ <import src="../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='about'>
+    <image src='../../../image/default.png'></image>
+    <view class='about_one'>版本号</view>
+    <view class='about_two'>V 2.0.4</view>
+</view>
+<view class='fun'>
+  <view class='nav' bindtap='fun'>
+  <text>功能介绍：</text>
+  <image src='../../../image/jiantou.png'></image>
+  </view>
+  <view class='nav' bindtap='agreement'>
+   <text>996名片协议与隐私政策:</text>
+  <image src='../../../image/jiantou.png'></image>
+  </view>
+</view>

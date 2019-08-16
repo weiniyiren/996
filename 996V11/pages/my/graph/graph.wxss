@@ -1,0 +1,148 @@
+/* pages/my/graph/graph.wxss */
+@import "../my.wxss";
+page{
+  overflow-x: hidden;
+}
+.Connectionsbox{
+  margin-bottom: 0;
+  border-bottom: 10rpx solid #f2f2f2;
+}
+.scroll{
+ width: 100vw;
+   height: 88rpx;
+    white-space: nowrap;
+    /* display: flex; */
+    /* padding-right: 200rpx; */
+}
+.scroll{
+  position: relative;
+}
+.link{
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+  z-index: 1;
+  height: 0;
+  width: 100vw;
+  border-bottom: 1rpx solid #f2f2f2; 
+}
+.scroll view{
+  position: relative;
+  z-index: 4;
+ width: 97rpx;
+ height: 86rpx;
+margin-left: 20rpx;
+display: inline-block;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:#808080;
+text-align: center;
+font-size:28rpx;
+
+}
+.scroll view text{
+ line-height: 86rpx;
+}
+.scroll .active{
+  border-bottom: 1rpx solid #FFA500;
+  color: #FFA500;
+}
+.content_title{
+  font-size:30rpx;
+font-family:PingFang-SC-Heavy;
+font-weight:800;
+color:rgba(0,0,0,1);
+border-left: 4rpx solid #F0A93A;
+padding-left: 20rpx;
+margin:42rpx auto 38rpx 25rpx;
+}
+
+.content .video{
+  width:702rpx;
+height:400rpx;
+background:rgba(0,0,0,1);
+margin: 0 auto 24rpx;
+display: block;
+position: relative;
+}
+video{
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+}
+.video_fun{
+  position: absolute;
+  z-index:5;
+  right: 32rpx;
+  top: 24rpx;
+}
+.video_funSon{
+  width: 60rpx;
+  /* background: pink; */
+  overflow-y: hidden;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 41rpx;
+}
+.video_fun image,.video_fun text{
+  display: block;
+  text-align: center;
+font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,255,255,1);
+}
+.video_fun image{
+  width: 40rpx;
+  height: 38rpx;
+
+}
+switch{
+zoom: .6;
+margin-left: 12rpx;
+margin-right: 37rpx;
+}
+.video_botFt{
+  float: left;
+  overflow: hidden;
+}
+
+.video_bot{
+  width:702rpx;
+  margin: 0 auto ;
+ 
+  font-size:28rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(51,51,51,1);
+/* padding: 30rpx 0; */
+line-height: 84rpx;
+height: 84rpx;
+overflow: hidden;
+}
+.video_botFt text,.video_botFt switch{
+   float: left;
+
+}
+.video_botRt{
+  font-size:24rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(153,153,153,1);
+float: right;
+
+}
+.introduction_mode image{
+  width: 50rpx;
+  height: 48rpx;
+
+}
+.introduction_mode_icon{
+  float: right;
+  margin-left: 46rpx;
+}
+.introduction_mode {
+  top: -4.3vh;
+}

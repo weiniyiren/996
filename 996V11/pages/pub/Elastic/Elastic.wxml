@@ -1,0 +1,42 @@
+
+<template name="home_code">
+   <!-- 点击加号弹出 -->
+   <view class='scan' hidden='{{home_code}}'>
+   <view class='scan_back' bindtap='scan_back'></view>
+      <view class='scan_item_box'>
+        <view class='scan_item' bindtap='scanCode'>
+            <text>扫一扫</text>
+        </view>
+        <view class='scan_item' bindtap='add'>
+            <text>添加好友</text>
+        </view>
+        <view class='scan_item'  bindtap='editing'>
+            <text>编辑名片</text>
+        </view>
+        <view class='scan_item' bindtap='release'>
+            <text class='border_none'>发布自媒体</text>
+        </view>
+      </view>
+   </view>
+</template>
+
+<template name="back_code">
+   <!-- 点击加号弹出 -->
+   <view class='scan' hidden='{{home_code}}'>
+   <view class='scan_back' bindtap='scan_back'></view>
+      <view class='scan_item_box'>
+        <view class='scan_item' bindtap='scanCode'>
+            <text> 导入通讯录</text>
+        </view>
+        <view class='scan_item' bindtap='add'>
+            <text>设置权限</text>
+        </view>
+        <!-- <view class='scan_item'  bindtap='editing'>
+            <text>投诉</text>
+        </view> -->
+        <!-- <view class='scan_item' >
+            <text class='border_none'>删除名片</text>
+        </view> -->
+      </view>
+   </view>
+</template>

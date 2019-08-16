@@ -1,0 +1,13 @@
+ <import src="../../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<radio-group class="radio-group"  bindchange="radioChange">
+    <view class='nav'  wx:for="{{nav}}" wx:key="{{index}}">
+    <view class='navbox' bindtap='navbox' data-idx='{{index}}'>{{item.one_cate_name}}</view>
+        <view class='nav_radio' hidden='{{idx!=index}}'>
+          <label class="radio" wx:for="{{item.data}}" wx:for-item='e' >
+            <radio value="{{e.two_cate_name}}" />{{e.two_cate_name}}
+          </label>
+      </view>
+    </view>
+ 
+</radio-group>

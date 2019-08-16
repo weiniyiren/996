@@ -1,0 +1,13 @@
+/* pages/homePage/Editing/gender/gender.wxss */
+@import "../../../pub/header/header.wxss";
+.radio{
+  display: block;
+  width: 600rpx;
+  margin: 40rpx auto 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom:1rpx solid #f2f2f2; 
+  overflow: hidden;
+}
+radio{
+  float: right;
+}

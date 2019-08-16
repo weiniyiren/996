@@ -1,0 +1,8 @@
+<!--pages/homePage/Editing/edit_inp/edit_inp.wxml-->
+ <import src="../../../pub/header/header.wxml" />
+<template is="header" data="{{header}}"  />
+<view class='nav'>
+   <input placeholder='{{keydata}}' wx:if="{{index!=15}}" name='input_data'  bindinput="keyData"></input>
+   <textarea wx:else></textarea>
+    <view bindtap="success">完成</view>
+</view>
