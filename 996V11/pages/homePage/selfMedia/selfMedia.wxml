@@ -16,39 +16,55 @@
   <view class='header_box'></view>
 
 <view class='bg_img'>
-  <swiper vertical="true" bindchange="swiper" circular="{{circular}}">
+  <swiper  vertical="true" 
+      bindchange="swiper"
+       skip-hidden-item-layout="true" 
+       
+       circular="{{circular}}">
       <swiper-item wx:for="{{filePath_arr}}">
-  <!-- <image src="../../../image/media_bg.png"></image> -->
+  <image wx:if="{{item.type==1}}" src="{{item.video}}"></image>
           <video 
-          autoplay="true"
-        show-play-btn="false"
+          wx:else
+       vslide-gesture-in-fullscreen="{{fullscreen}}"
+           id='video{{index}}'
+          controls="{{controls}}"
+          autoplay="{{item.autoplay}}"
+          poster="{{item.poster}}"
           danmu-btn="true"  
           direction="0" 
           vslide-gesture="true"
-          src="{{item}}" ></video>
+          binderror="aa"
+          bindwaiting="bindwaiting"
+          src="{{item.video}}"  ></video>
       
   <view class='function'>
+  <view class='downloadblock'  bindtap='download'  hidden='{{download}}'></view>
     <view class='give' bindtap='download' style='margin-bottom:22rpx;'>
           <image src='../../../image/fenxian.png'></image>
         </view>
         <view class='give'>
-          <image bindtap='give_fun' hidden='{{give}}'  src='../../../image/give-1.png'></image>
-          <image  bindtap='give_fun' hidden='{{!give}}' src='../../../image/give.png'></image>
-          <text>{{item.clickNumber}}111</text>
+          <image bindtap='give_fun' data-index='{{index}}' data-mediaId='{{item.mediaId}}' data-uid='{{item.uid}}'   src='{{item.clickStatus==1?"../../../image/give-1.png":"../../../image/give.png"}} '></image>
+          <text>{{item.clickNumber>=999?"999+":item.clickNumber}}</text>
         </view>
         <!-- <view class='give'>
           <image src='../../../image/home16.png'></image>
           <text>23421</text>
         </view> -->
-         <view class='give'  bindtap='share_mask'>
+         <!-- <view class='give'  bindtap='share_mask'>
           <image src='../../../image/home17.png'></image>
-          <text>23421</text>
-        </view>
+          <text>1234</text>
+        </view> -->
   </view>
   <!-- <view class='Barrage_inp'>
     <input ></input>
   </view> -->
-  
+  <view class='user'>
+    <view class='user_portrait'>
+    <image src='{{portrait}}'></image>
+    <!-- <image src='../../../image/default.png'></image> -->
+    </view>
+    <view class='title'>{{item.title}}</view>
+  </view>
   </swiper-item>
   </swiper>
 </view>

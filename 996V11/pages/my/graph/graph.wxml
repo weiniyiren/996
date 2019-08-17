@@ -22,7 +22,7 @@
   </view>
   <view class='introduction_botm'>
       <view class='introduction_botm_left'>
-        <image src='{{indexData.userCoverLink}}'> </image>
+        <image src='../../../image/996icon.png'></image>
       </view>
       <view class='introduction_botm_cen'>
       <view class='introduction_botm_cen_one'>

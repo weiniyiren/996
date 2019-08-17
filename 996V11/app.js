@@ -31,42 +31,42 @@ App({
     })
   },
   // appid
-  setAppid:function(){
-    let _this = this
-    // 获取或设置全局设备值
-    let appid = this.globalData.appid;
-    let token = this.globalData.token;
-    wx.getStorage({
-      key: 'appid',
-      success(res) {
-        _this.globalData.appid = res.data
-      },
-      fail(res) {
-        // 登录
-        wx.login({
-          success: res => {
-            // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            console.log(res.code)
-            _this.globalData.appid = res.code
-            wx.setStorage({
-              key: 'appid',
-              data: res.code,
-            })
-          }
-        })
-      }
-    })
-    wx.getStorage({
-      key: 'token',
-      success(res) {
-        _this.globalData.appid = res.data
-      },
-      fail(res) {
-        // console.log(res,11111)
-        // _this.denglu("登录失效或未登录")
-      }
-    })
-  },
+  // setAppid:function(){
+  //   let _this = this
+  //   // 获取或设置全局设备值
+  //   let appid = this.globalData.appid;
+  //   let token = this.globalData.token;
+  //   wx.getStorage({
+  //     key: 'appid',
+  //     success(res) {
+  //       _this.globalData.appid = res.data
+  //     },
+  //     fail(res) {
+  //       // 登录
+  //       wx.login({
+  //         success: res => {
+  //           // 发送 res.code 到后台换取 openId, sessionKey, unionId
+  //           console.log(res.code)
+  //           _this.globalData.appid = res.code
+  //           wx.setStorage({
+  //             key: 'appid',
+  //             data: res.code,
+  //           })
+  //         }
+  //       })
+  //     }
+  //   })
+  //   wx.getStorage({
+  //     key: 'token',
+  //     success(res) {
+  //       _this.globalData.appid = res.data
+  //     },
+  //     fail(res) {
+  //       // console.log(res,11111)
+  //       // _this.denglu("登录失效或未登录")
+  //     }
+  //   })
+  // },
   // 获取腾讯Im 程序初始加载获取即时通讯IM的签名userSig
   initIM: function () {
     var token = wx.getStorageSync('token');
@@ -334,7 +334,7 @@ App({
     })
   },
   onLaunch: function () {
-    this.setAppid()
+    // this.setAppid()
    let _this=this
     // 三、	程序初始加载获取即时通讯IM的签名userSig
     // 获取用户信息
@@ -369,12 +369,14 @@ App({
   },
 
   globalData: {
-    api:"http://dmcs2.yzjphp.top/",
+    api:"https://dmcs2.yzjphp.top/",
+    // api: "http://dmcs2.yzjphp.top/",
     appid:"",
     windowH:'',
     windowW:'',
     token:"",
     name:1,
+    state:"",
   },
   // //渐入，渐出实现 
   // show: function (that, param, opacity) {

@@ -56,36 +56,17 @@ Page({
     if (!myreg.test(_this.data.zhahao)) {
       app.code0("请输入正确手机号")
     } else {
-     wx.showModal({
-       title: _this.data.zhahao,
-       content: '',
-     })
-     wx.request({
-       url: app.globalData.api + "getPhoneCodeV1",
-       method: "post",
-       data: {
-         "phoneNumber": _this.data.zhahao,
-       },
-       success:function(res){
-       
-         // 倒计时
-         _this.setData({
-           codetipnum: sres.data.seconds,
-           smscode: true
-         }, function () {
-           _this.data.kaishi = setInterval(_this.daojishi, 1000)
-         })
-
-       },fail:function(res){
-       console.log(res)
-       
-       }
+      request.request("post", app.globalData.api + "getPhoneCodeV1", {
+        "phoneNumber": _this.data.zhahao,
+      }).then((sres) => {
+      // 倒计时
+      _this.setData({
+        codetipnum: sres.data.seconds,
+        smscode: true
+      }, function () {
+        _this.data.kaishi = setInterval(_this.daojishi, 1000)
       })
-      // request.request("post", app.globalData.api + "getPhoneCodeV1", {
-      //   "phoneNumber": _this.data.zhahao,
-      // }).then((sres) => {
-      
-      // })
+      })
     }
     }
   },
@@ -120,10 +101,8 @@ Page({
             console.log(sres)
             if (sres.code == "200") {
               // wx.setStorageSync("token", sres.data.token)
-              wx.setStorage({
-                key: 'page',
-                data: 'logs',
-              })
+              app.globalData.state="1"
+              wx.setStorageSync({key: 'page',data: 'logs',})
               wx.setStorageSync("home", true)
               wx.setStorageSync("userId", sres.data.appid);
               app.globalData.appid = sres.data.appid;
@@ -224,7 +203,6 @@ Page({
       url: '../my/agreement/agreement',
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

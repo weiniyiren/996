@@ -110,7 +110,7 @@ wx.navigateBack({
             console.log('ewqeqwe')
             var pathDataArray = [];
             for (var i = 0; i <= res.data.data.mediaInfo.length - 1; i++) {
-              // console.log(res.data.data.mediaInfo[i].mediaCoverAddress);
+              console.log(res.data.data.mediaInfo[i].mediaCoverAddress);
               pathDataArray[i] = res.data.data.mediaInfo[i].mediaCoverAddress;
             }
             request.filePathArray(pathDataArray).then((ress) => {
@@ -205,6 +205,7 @@ wx.navigateBack({
                               : 'png'
                           }, { 'content-type': 'application/x-www-form-urlencoded', "uniqueDeviceId": uniqueDeviceId, "token": token }).then((sres) => {
                             if (sres.code !== 200) {
+
                               app.code0(sres.msg)
                             } else {
                               var urlfilePath = sres.data.uploadFileLink
@@ -259,7 +260,6 @@ wx.navigateBack({
             console.log(_this.data.indexData)
           
           // })
-          console.log(_this.data.indexData)
           // var indexarray = _this.data.indexData;
           // console.log(indexarray)
             // 调取成功之后 在吧头像和背景图获取读取路径

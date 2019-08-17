@@ -15,5 +15,5 @@
 <button bindtap='login'>登陆</button>
 <view class='bidu'>
   <text class='one'>点击登录表示阅读并同意</text>
-  <text class='two'>《小熊名片协议与隐私政策》</text>
+  <text class='two' bindtap='agreement'>《996名片协议与隐私政策》</text>
 </view>

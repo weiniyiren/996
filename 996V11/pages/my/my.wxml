@@ -25,7 +25,7 @@
 <view class='uersname'>{{indexData.userName}}</view>
   <text>名片号:{{indexData.userVisitingCard}} </text>
   <view class='portrait'>
-  <image src='{{indexData.userCoverLink}}'></image>
+  <image  mode='aspectFit' src='{{indexData.userCoverLink}}'></image>
   </view>
   <view class='introduction_botm'>
       <view class='introduction_botm_left'>

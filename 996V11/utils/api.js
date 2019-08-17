@@ -21,6 +21,7 @@ const request = function request(methods, urls, datas,header) {
         } else if (sres.data){
           if (sres.data.msg == "token不存在！" || sres.data.msg == "登录失效，请重新登录！" || sres.data.msg == "登录状态已失效，请重新登录！"){
             app.denglu(sres.data.msg)
+            app.globalData.state="0"
           }else{
             app.code0(sres.data.msg)
             // wx.showModal({

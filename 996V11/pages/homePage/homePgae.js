@@ -72,10 +72,13 @@ this.setData({
   // 点击加号弹出切换
   scan_back: function () {
     let _this=this
-    this.err_request().then(()=>{
-      _this.setData({
-        home_code: !this.data.home_code
-      })
+    this.err_request().then((res)=>{
+      if(res){
+        console.log(res)
+        _this.setData({
+          home_code: !this.data.home_code
+        })
+      }
     })
   },
   // 名片编辑
@@ -91,32 +94,41 @@ this.setData({
     })
   },
   //脚步
-  footCircle: function (e) {
+  footcircle: function (e) {
     let _this=this;
-    this.err_request().then(()=>{
-      console.log(e.currentTarget.dataset.index)
-      if (e.currentTarget.dataset.index === 0) {
+    console.log(e.currentTarget.dataset.index)
+    let id = this.data.userId;
+    this.err_request().then((res) => {
+      if (e.currentTarget.dataset.index === 0 && res) {
         wx.navigateTo({
           url: './chat/chat?page=最近',
         })
-      } else if (e.currentTarget.dataset.index === 2) {
+      
+      } else if (e.currentTarget.dataset.index === 2 && res) {
+      
         wx.navigateTo({
-          url: './selfMedia/selfMedia',
+            url: './selfMedia/selfMedia?requestType=1&id='+ id,
         })
-      } else {
+       
+      } else if ( res){
+    
         wx.navigateTo({
           url: './chat/chat?page=文件夹',
         })
+       
       }
     })
    
   },
   // 留言
   message:function(){
-    this.err_request().then(()=>{
- wx.navigateTo({
-      url: './chat/chat?page=留言',
-    })
+    this.err_request().then((res)=>{
+      if(res){
+        wx.navigateTo({
+          url: './chat/chat?page=留言',
+        })
+      }
+
     })
    
   },
@@ -128,10 +140,12 @@ this.setData({
   // 
   choose_fun: function () {
     let _this=this;
-    this.err_request(()=>{
-      _this.setData({
-        choose_back: !this.data.choose_back
-      })
+    this.err_request((res)=>{
+      if(res){
+        _this.setData({
+          choose_back: !this.data.choose_back
+        })
+      }
     })
   },
   // 点击扫码
@@ -143,13 +157,13 @@ this.setData({
     })
   },
   // 
-  headPhone: function () {
+  headphone: function () {
     let _this=this;
-    this.err_request(()=>{
+    this.err_request().then((res)=>{
       wx.navigateTo({
         url: '../my/my?page="homeoage',
       })
-    })
+    } )
   
   },
   /**
@@ -157,12 +171,7 @@ this.setData({
    */
   onLoad: function (options) {
     let _this = this;
-    // let appid = app.globalData.appid;
-    // let token = app.globalData.token;
-    // request.request("get", app.globalData.api + "getUserIndexDataV1", {}, { 'content-type': 'application/x-www-form-urlencoded', uniqueDeviceId: appid, token: token}).then((sres) => {
-    //   console.log(sres)
-    // })
-
+   this.int()
     this.setData({
       height: app.globalData.windowH
     });
@@ -187,11 +196,11 @@ this.setData({
     let endY = e.changedTouches[0].clientY;
     let startX=this.data.startX;
     let startY = this.data.startY;
-    
+    let id = this.data.userId;
     if (endX - startX < -50 && Math.abs(endY - startY) < 50) {   //左滑
       console.log(startX, endX, startY, endY)
         wx.navigateTo({
-          url: './mySelfMedia/mySelfMedia',
+          url: './mySelfMedia/mySelfMedia?requestType=2&id=' + id,
         })
     }
   },
@@ -206,90 +215,13 @@ this.setData({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
-    // app.showUserCardinfo(168)
-    app.setAppid();
-
-    // app.ossInfo();
-    // let appid = app.globalData.appid;
-    let _this = this;
-
-    let appid = wx.getStorageSync("appid") ? wx.getStorageSync("appid") : app.globalData.appid;
-    let token = wx.getStorageSync("token") ? wx.getStorageSync("token") : app.globalData.token;
-    // console.log(appid)
-    // console.log(token)
-    request.request("get", app.globalData.api + "getUserIndexDataV1", {}, { 'content-type': 'application/x-www-form-urlencoded', "uniqueDeviceId": appid, "token": token }).then((sres) => {
-      console.log(sres)
-      if (sres.code !== 200) {
-        app.code0(sres.msg)
-      } else {
-        // 判断一下 如果用户头像已经提交了的话 就显示 否则就显示默认
-        if (sres.data.userCoverLink !== ''){
-          request.filePath(sres.data.userCoverLink).then((userCoverLink) => {
-            _this.setData({
-              headerImg: userCoverLink.data
-            })
-          })
-        }
-        // 判断一下 如果背景图已经提交了的话 就显示 否则就显示默认
-        if (sres.data.backgroundImagesLink !== ''){
-          request.filePath(sres.data.backgroundImagesLink).then((backgroundImagesLink) => {
-            _this.setData({
-              userImg: backgroundImagesLink.data
-            })
-          })
-        }
-        // 判断一下 如果用户二维码已经提交了的话 就显示 否则就显示默认
-        if (sres.data.qrCodeImagesLink !== ''){
-          request.filePath(sres.data.qrCodeImagesLink).then((qrCodeImagesLink) => {
-            _this.setData({
-              qrcode: qrCodeImagesLink.data
-            })
-          })
-        }
-
-        this.setData({
-          name: (sres.data.userName !== '') ? sres.data.userName : '您的名字',
-        
-          position: (sres.data.industry !== '') ? sres.data.industry : '您的职位',
-          Corporate_name: (sres.data.companyName !== '') ? sres.data.companyName: '您的公司',
-          Company_address: (sres.data.companyAddress !== '') ? sres.data.companyAddress:'您的地址',
-        })
-        // 把对应的用户数据放进缓存
-        wx.setStorageSync('name', sres.data.userName)
-        wx.setStorageSync('position', sres.data.position)
-        wx.setStorageSync('companyName', sres.data.companyName)
-        wx.setStorageSync('Company_address', sres.data.companyAddress)
-        wx.setStorageSync('userPhone', sres.data.userPhone)
-        wx.setStorageSync('industry', sres.data.industry)
-        wx.setStorageSync('userVisitingCard', sres.data.userVisitingCard)
-        // 因为首页已经添加缓存 此处添加是为了编辑名片
-        wx.setStorageSync('backgroundImagesLink', sres.data.backgroundImagesLink)
-        wx.setStorageSync('userId', sres.data.id)
-        wx.setStorageSync('management', sres.data.management)
-        wx.setStorageSync('personalSign', sres.data.personalSign)
-        wx.setStorageSync('qq', sres.data.qq)
-        wx.setStorageSync('qrCodeImagesLink', sres.data.qrCodeImagesLink)
-        if (sres.data.sex == 1) {
-          wx.setStorageSync('sex', '男')
-        } else if (sres.data.sex == 0) {
-          wx.setStorageSync('sex', '女')
-        } else if (sres.data.sex == 2) {
-          wx.setStorageSync('sex', '未知')
-        }
-        wx.setStorageSync('shareWebsite', sres.data.shareWebsite)
-        wx.setStorageSync('userCoverLink', sres.data.userCoverLink)
-        wx.setStorageSync('userEmail', sres.data.userEmail)
-        wx.setStorageSync('userFax', sres.data.userFax)
-        wx.setStorageSync('userName', sres.data.userName)
-        wx.setStorageSync('userNickName', sres.data.userNickName)
-        wx.setStorageSync('userPhone', sres.data.userPhone)
-        wx.setStorageSync('userPhoneNumber', sres.data.userPhoneNumber)
-        wx.setStorageSync('userPosition', sres.data.userPosition)
-        wx.setStorageSync('wechat', sres.data.wechat)
-      }
-    })
+  onShow: function (e) {
+    let _this=this
+    if (wx.getStorageSync("page")){
+      _this.int();
+      wx.removeStorageSync("page")
+      console.log("page")
+    }
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -309,7 +241,7 @@ this.setData({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+      this.int()
   },
 
   /**
@@ -325,7 +257,7 @@ this.setData({
   },
   //选择照片
   choose: function () {
-    app.setAppid();
+    // app.setAppid();
     app.ossInfo();
     var _this = this;
     let appid = wx.getStorageSync("appid") ? wx.getStorageSync("appid") : app.globalData.appid;
@@ -413,11 +345,101 @@ this.setData({
   // oss 读取图片
 err_request:function(){
   var err = new Promise(function (success, fail) {
-  if (wx.getStorageSync("appid")){
-    app.denglu("请登录后再试")
+    if (wx.getStorageSync("appid") && app.globalData.state!="0"){
+    console.log("true", wx.getStorageSync("appid"))
+    success(true)
+  }else{
+    console.log("false")
+    app.denglu("未登录或登录失效")
+    fail(false)
   }
   })
   return err
+},
+int:function(){
+
+  // app.showUserCardinfo(168)
+  // app.setAppid();
+
+  // app.ossInfo();
+  // let appid = app.globalData.appid;
+  let _this = this;
+
+  let appid = wx.getStorageSync("appid") ? wx.getStorageSync("appid") : app.globalData.appid;
+  let token = wx.getStorageSync("token") ? wx.getStorageSync("token") : app.globalData.token;
+  // console.log(appid)
+  // console.log(token)
+  request.request("get", app.globalData.api + "getUserIndexDataV1", {}, { 'content-type': 'application/x-www-form-urlencoded', "uniqueDeviceId": appid, "token": token }).then((sres) => {
+    console.log(sres)
+    if (sres.code !== 200) {
+      app.code0(sres.msg)
+    } else {
+      // 判断一下 如果用户头像已经提交了的话 就显示 否则就显示默认
+      if (sres.data.userCoverLink !== '') {
+        request.filePath(sres.data.userCoverLink).then((userCoverLink) => {
+          _this.setData({
+            headerImg: userCoverLink.data
+          })
+        })
+      }
+      // 判断一下 如果背景图已经提交了的话 就显示 否则就显示默认
+      if (sres.data.backgroundImagesLink !== '') {
+        request.filePath(sres.data.backgroundImagesLink).then((backgroundImagesLink) => {
+          _this.setData({
+            userImg: backgroundImagesLink.data
+          })
+        })
+      }
+      // 判断一下 如果用户二维码已经提交了的话 就显示 否则就显示默认
+      if (sres.data.qrCodeImagesLink !== '') {
+        request.filePath(sres.data.qrCodeImagesLink).then((qrCodeImagesLink) => {
+          _this.setData({
+            qrcode: qrCodeImagesLink.data
+          })
+        })
+      }
+
+      this.setData({
+        name: (sres.data.userName !== '') ? sres.data.userName : '您的名字',
+        userId: sres.data.id,
+        position: (sres.data.industry !== '') ? sres.data.industry : '您的职位',
+        Corporate_name: (sres.data.companyName !== '') ? sres.data.companyName : '您的公司',
+        Company_address: (sres.data.companyAddress !== '') ? sres.data.companyAddress : '您的地址',
+      })
+      // 把对应的用户数据放进缓存
+      wx.setStorageSync('name', sres.data.userName)
+      wx.setStorageSync('position', sres.data.position)
+      wx.setStorageSync('companyName', sres.data.companyName)
+      wx.setStorageSync('Company_address', sres.data.companyAddress)
+      wx.setStorageSync('userPhone', sres.data.userPhone)
+      wx.setStorageSync('industry', sres.data.industry)
+      wx.setStorageSync('userVisitingCard', sres.data.userVisitingCard)
+      // 因为首页已经添加缓存 此处添加是为了编辑名片
+      wx.setStorageSync('backgroundImagesLink', sres.data.backgroundImagesLink)
+      wx.setStorageSync('userId', sres.data.id)
+      wx.setStorageSync('management', sres.data.management)
+      wx.setStorageSync('personalSign', sres.data.personalSign)
+      wx.setStorageSync('qq', sres.data.qq)
+      wx.setStorageSync('qrCodeImagesLink', sres.data.qrCodeImagesLink)
+      if (sres.data.sex == 1) {
+        wx.setStorageSync('sex', '男')
+      } else if (sres.data.sex == 0) {
+        wx.setStorageSync('sex', '女')
+      } else if (sres.data.sex == 2) {
+        wx.setStorageSync('sex', '未知')
+      }
+      wx.setStorageSync('shareWebsite', sres.data.shareWebsite)
+      wx.setStorageSync('userCoverLink', sres.data.userCoverLink)
+      wx.setStorageSync('userEmail', sres.data.userEmail)
+      wx.setStorageSync('userFax', sres.data.userFax)
+      wx.setStorageSync('userName', sres.data.userName)
+      wx.setStorageSync('userNickName', sres.data.userNickName)
+      wx.setStorageSync('userPhone', sres.data.userPhone)
+      wx.setStorageSync('userPhoneNumber', sres.data.userPhoneNumber)
+      wx.setStorageSync('userPosition', sres.data.userPosition)
+      wx.setStorageSync('wechat', sres.data.wechat)
+    }
+  })
 }
 
 })

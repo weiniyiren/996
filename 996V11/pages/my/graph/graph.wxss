@@ -82,7 +82,7 @@ video{
   /* background: pink; */
   overflow-y: hidden;
   justify-content: center;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   margin-bottom: 41rpx;
 }
@@ -97,7 +97,8 @@ color:rgba(255,255,255,1);
 .video_fun image{
   width: 40rpx;
   height: 38rpx;
-
+  display: block;
+  margin: 0 auto 10rpx;
 }
 switch{
 zoom: .6;

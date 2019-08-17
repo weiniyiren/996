@@ -24,10 +24,11 @@
        circular="{{circular}}">
       <swiper-item 
        wx:for="{{filePath_arr}}">
-  <!-- <image src="../../../image/media_bg.png"></image> -->
-  {{current}}
+  <image wx:if="{{item.type==1}}" src="{{item.video}}"></image>
           <video 
-          id='video{{index}}'
+          wx:else
+       vslide-gesture-in-fullscreen="{{fullscreen}}"
+           id='video{{index}}'
           controls="{{controls}}"
           autoplay="{{item.autoplay}}"
           poster="{{item.poster}}"
@@ -36,25 +37,26 @@
           vslide-gesture="true"
           binderror="aa"
           bindwaiting="bindwaiting"
-          src="{{item.video}}" ></video>
+          src="{{item.video}}"  ></video>
       
   <view class='function'>
+  
     <view class='give' bindtap='download' style='margin-bottom:22rpx;'>
           <image style='height:16rpx;' src='../../../image/introduction_mode.png'></image>
         </view>
         <view class='give'>
-          <image bindtap='give_fun' hidden='{{give}}'  src='../../../image/give-1.png'></image>
-          <image  bindtap='give_fun' hidden='{{!give}}' src='../../../image/give.png'></image>
-          <text>{{item.clickNumber}}</text>
+          <image bindtap='give_fun' data-index='{{index}}' data-mediaId='{{item.mediaId}}' data-uid='{{item.uid}}'   src='{{item.clickStatus==1?"../../../image/give-1.png":"../../../image/give.png"}} '></image>
+          <!-- <image  bindtap='give_fun' hidden='{{!give}}' src='../../../image/give.png'></image> -->
+          <text>{{item.clickNumber>=999?"999+":item.clickNumber}}</text>
         </view>
         <!-- <view class='give'>
           <image src='../../../image/home16.png'></image>
           <text>23421</text>
         </view> -->
-         <view class='give'  bindtap='share_mask'>
+         <!-- <view class='give'  bindtap='share_mask'>
           <image src='../../../image/home17.png'></image>
           <text>23421</text>
-        </view>
+        </view> -->
   </view>
   <!-- <view class='Barrage_inp'>
     <input ></input>
@@ -76,6 +78,7 @@
   </view>
 
 </view>
+<view class='downloadblock'  bindtap='download'  hidden='{{download}}'></view>
 <view class='download'  hidden='{{download}}'>
   <view class='download_cen'>
     <image src='../../../image/download3.png'></image>

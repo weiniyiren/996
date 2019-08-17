@@ -10,7 +10,8 @@
   <text>{{indexData.mediaTotal}}</text>
   </view>
 </view>
-<view class='commodity'>
+<view class='commodity' hidden='{{indexData.mediaInfo[0]==""}}'>
+<!-- {{indexData.mediaInfo[0].mediaCoverAddress}} -->
   <image 
   wx:for="{{indexData.mediaInfo}}" 
         data-errimg="classicArr[{{index}}].img"  
